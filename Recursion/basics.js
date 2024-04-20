@@ -74,4 +74,19 @@ const recusrsion4 = n => {
     return 1 + recusrsion4(Math.floor(n/2));
 }
 console.log(recusrsion4(25));
+//4
 
+console.log('*--------------*');
+// Guess the output
+
+const recursion5 = n => {
+if(n===0) return;
+recursion5(Math.floor(n/2));
+console.log(n);
+}
+
+recursion5(5);
+
+// 1
+// 2
+// 5
