@@ -68,7 +68,8 @@ recursion3(3);
 // 1 
 console.log('*--------------*');
 // Guess the output
-
+// if n is a power of 2 it computes log2n where n>= 0
+// else returns floor of log2n
 const recusrsion4 = n => {
     if(n === 1)return 0;
     return 1 + recusrsion4(Math.floor(n/2));
@@ -78,15 +79,16 @@ console.log(recusrsion4(25));
 
 console.log('*--------------*');
 // Guess the output
-
+// Binary represntation of the number question;
 const recursion5 = n => {
 if(n===0) return;
 recursion5(Math.floor(n/2));
-console.log(n);
+console.log(n % 2);
 }
 
 recursion5(5);
 
 // 1
-// 2
-// 5
+// 0
+// 1
+
