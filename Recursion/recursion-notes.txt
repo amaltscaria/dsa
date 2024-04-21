@@ -1,0 +1,13 @@
+Recursion => A function calls itself
+
+*) Any program that can be written iteratively can also be written recursively.
+
+*) Many algorithm techniques are based on recursion.
+    => Dynamic Programming
+    => Backtracking
+    => Divide and Conquer( Binary Search,  Quick sort merge sort)
+
+*) Many problems inherently recursive
+    => Tower of Hanoi
+    => DFS based traversals (DFS of graph, Inorder, Preorder, Postorder traversal of tree);
+
