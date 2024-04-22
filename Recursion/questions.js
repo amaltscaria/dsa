@@ -54,3 +54,47 @@ const sumOfDigits = num => {
 }
 console.log(sumOfDigits(134));
 console.log(sumOfDigits(10));
+
+console.log('*-------------------*');
+function printNos(N){
+    if(N === 0) return;
+    printNos(N-1);
+    process.stdout.write(N + " ");
+}
+printNos(74);
+console.log('*-------------------*');
+//Find power 
+function power(N, R) {
+    let res = 1;
+  function  p(N, R) {
+        if(R===0) return;
+        res*=N;
+        p(N, R-1);
+    }
+    p(N, R);
+    console.log(res)
+    return res;
+}
+console.log(power(13, 31) % 1000000007);
+console.log('*-------------------*');
+//Find power => good
+var myPow = function(x, n) {
+    if (n===0) return 1;
+    
+    let pow = Math.abs(n);
+    
+	let result = pow%2===0 ? myPow(x*x,pow/2) : myPow(x*x,  (pow-1)/2) * x;
+    
+    return n < 0 ? 1/result : result;
+};
+
+myPow(13,31);
+console.log('*-------------------*');
+//Find digitalRoot
+function digitalRoot(n)
+    {
+        if(n<10) return n;
+        return digitalRoot(n%10 + Math.floor(n/10));
+    }
+
+    console.log(digitalRoot(99));
