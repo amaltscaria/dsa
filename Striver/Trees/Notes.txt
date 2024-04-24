@@ -1,0 +1,23 @@
+Binary Tree
+
+*) Full Binary Tree
+
+    => Either can have 0 or 2 children.
+
+
+*) Complete Binary Tree
+
+    => All levels expect the last level are completely filled.
+    => The last level has all nodes as left as possible.
+
+*) Perfect Binary Tree
+
+    => All leaf nodes are at the same level.
+
+
+*) Balanced Binary Tree => Height of tree can be max log(N).
+
+
+*) Degenerate Tree
+    => Skew tree(linked list) => Every node has a single child.
+
