@@ -35,8 +35,7 @@ class Stack {
     insertRecursively(val) {
        if(this.stack.length){
         let pop = this.stack.pop();
-        this.insertRecursively(val);
-        this.push(pop);
+        this.stack.push(pop);
        }else {
         this.stack.push(val);
        }
