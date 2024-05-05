@@ -1,47 +1,43 @@
 class MaxHeap {
-    constructor(){
+    constructor() {
         this.values = [];
     }
-
-    getLeftchild(i) {
-        return (2*i) + 1;
+    getLeftChild(i) {
+        return (i*2) + 1;
     }
-    getRightChild(i) {
-        return (2*i) + 2;
+    getRightChilde(i) {
+        return (i*2) + 2;
     }
     getParent(i) {
         return Math.floor((i-1)/2);
     }
-
-    insert(val){
-       let childIndex = this.values.length;
-       this.values[childIndex] = val;
-       let parentIndex = this.getParent(childIndex);
-       while(this.values[parentIndex] < this.values[childIndex]) {
-        let temp = this.values[parentIndex];
-        this.values[parentIndex] = this.values[childIndex];
-        this.values[childIndex] = temp;
-        childIndex = parentIndex;
-        parentIndex = this.getParent(childIndex);
-       }
+    swap(i,j){
+        [this.values[i], this.values[j]] = [this.values[j], this.values[i]];
     }
+    insert(val) {
+        // First Insert the val to the end of the heap
+        this.values[this.values.length] = val;
+        // Now bubble up so that it reaches the right place
+        this.bubbleUp();
+    }
+    bubbleUp(){
+        let i = this.values.length -1 ;
+        while(this.values[i] > this.values[this.getParent(i)] && i>0){
+            this.swap(i, this.getParent(i));
+            i = this.getParent(i);
+        }
+    }
+
 }
 
-const mh =  new MaxHeap();
-// mh.insert(5);
-// mh.insert(23);
-// mh.insert(17);
-// mh.insert(34);
-// mh.insert(53);
-// mh.insert(9);
-// mh.insert(100);
 
-mh.insert(41);
-mh.insert(39);
-mh.insert(33);
-mh.insert(18);
-mh.insert(27);
-mh.insert(12);
-mh.insert(55);
+const maxHeap = new MaxHeap();
+maxHeap.insert(10);
+maxHeap.insert(34);
+maxHeap.insert(20);
+maxHeap.insert(64);
+maxHeap.insert(5);
+maxHeap.insert(2);
+maxHeap.insert(1);
 
-console.log(mh);
+console.log(maxHeap);
